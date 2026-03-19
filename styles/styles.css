@@ -32,10 +32,6 @@ body {
     align-items: center;
 }
 
-* {
-    /* outline: solid red 1px; */
-}
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -51,6 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     position: fixed;
+    bottom: 2vh;
     border: 3px solid #f1f1f1;
     background-color: transparent;
 }
@@ -85,14 +82,18 @@ a {
 .card {
     padding: 5px;
     max-width: 300px;
-    /* max-height: 250px; */
+    /* max-width: 300px; */
+    min-height: 250px;
+    max-height: 250px;
     border: 1px solid #eee;
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
     border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     
 }
-
-
 
 .card-title {
     font-size: 18px;
@@ -107,4 +108,10 @@ a {
 
 .card-button {
     text-align: right;
+    /* justify-self: flex-end; */
+    margin-top: auto;
+}
+
+* {
+    outline: solid red 1px;
 }
