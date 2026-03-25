@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/script.js"></script>
     <title>Note Apps</title>
 </head>
 <body>
@@ -27,47 +26,19 @@
     <div class="form-popup" id="myForm">
         <form action="" class="form-container">
             <h1>New Note</h1>
-            <label for="title"><b>Title</b></label>
-            <input type="text" placeholder="Enter Title" name="title" id="input-title" required>
-            <label for="notes"><b>Notes</b></label>
-            <textarea name="notes" id="input-notes" cols="30" rows="10" placeholder="Enter Notes"></textarea>
+            <label for="inputTitle"><b>Title</b></label>
+            <input type="text" placeholder="Enter Title" name="title" id="inputTitle" required>
+            <label for="inputNotes"><b>Notes</b></label>
+            <textarea name="userNote" id="inputNotes" cols="30" rows="10" placeholder="Enter Notes" required></textarea>
             <div class="form-button-container">
-                <button type="submit" class="btn">Save</button>
+                <button type="submit" class="btn" id="noteSubmit">Save</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
             </div>
         </form>
     </div>
     <div class="card-container" id="card-container">
-        <div class="card">
-            <div class="card-title">ini judul card note 1</div>
-            <div class="card-note-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur fugiat reprehenderit delectus totam eius! Excepturi nihil quam illum quos quisquam nobis fugiat, voluptatum ab numquam doloribus officia velit ipsam, est culpa cum officiis labore eos corporis soluta inventore nulla quasi error impedit quidem! Tempore commodi, alias cumque error corporis cupiditate?</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div>
-        <div class="card">
-            <div class="card-title">ini judul card note 2</div>
-            <div class="card-note-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur fugiat reprehenderit delectus totam eius! Excepturi nihil quam illum quos quisquam nobis fugiat, voluptatum ab numquam doloribus officia velit ipsam, est culpa cum officiis labore eos corporis soluta inventore nulla quasi error impedit quidem! Tempore commodi, alias cumque error corporis cupiditate?</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div>
-        <!-- <div class="card">
-            <div class="card-title">ini judul card note 3</div>
-            <div class="card-note-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fuga a porro est consequatur consectetur illo unde explicabo temporibus enim, obcaecati laborum, aspernatur assumenda, voluptates similique ullam corrupti? Voluptatum fuga odit mollitia itaque voluptate asperiores omnis vel earum, ipsam dolor nemo qui suscipit laborum magnam natus, corporis ius</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div>
-        <div class="card">
-            <div class="card-title">ini judul card note 4</div>
-            <div class="card-note-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fuga a porro est consequatur consectetur illo unde explicabo temporibus enim, obcaecati laborum, aspernatur assumenda, voluptates similique ullam corrupti? Voluptatum fuga odit mollitia itaque voluptate asperiores omnis vel earum, ipsam dolor nemo qui suscipit laborum magnam natus, corporis ius</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div>
-        <div class="card">
-            <div class="card-title">ini judul card note 5</div>
-            <div class="card-note-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fuga a porro est consequatur consectetur illo unde explicabo temporibus enim, obcaecati laborum, aspernatur assumenda, voluptates similique ullam corrupti? Voluptatum fuga odit mollitia itaque voluptate asperiores omnis vel earum, ipsam dolor nemo qui suscipit laborum magnam natus, corporis ius</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div>
-        <div class="card">
-            <div class="card-title">ini judul card note 6</div>
-            <div class="card-note-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis fuga a porro est consequatur consectetur illo unde explicabo temporibus enim, obcaecati laborum, aspernatur assumenda, voluptates similique ullam corrupti? Voluptatum fuga odit mollitia itaque voluptate asperiores omnis vel earum, ipsam dolor nemo qui suscipit laborum magnam natus, corporis ius</div>
-            <div class="card-button">pin, edit, delete</div>
-        </div> -->
+        <!-- ini nanti bakal ada isi dari database -->
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
