@@ -38,6 +38,7 @@ body {
     width: 350px;
     padding: 10px;
     background-color: aliceblue;
+    border: solid 1px black;
 }
 
 .form-popup {
@@ -112,6 +113,27 @@ a {
     margin-top: auto;
 }
 
-* {
+/* * { */
     /* outline: solid red 1px; */
+/* } */
+
+.form-edit-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2vh;
+    border: 3px solid #f1f1f1;
+    background-color: transparent;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 10px;
+    background-color: palegreen;
+    border: solid 1px black;
 }

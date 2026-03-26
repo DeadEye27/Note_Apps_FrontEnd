@@ -36,8 +36,31 @@
             </div>
         </form>
     </div>
+    <div class="form-edit-container" id="editFormContainer">
+        <form action="" class="editForm">
+            <h1>Edit Note</h1>
+            <label for="editedTitleInput"><b>Title</b></label>
+            <input type="text" placeholder="Enter Edited Title" name="title" id="editedTitleInput" required>
+            <label for="editedNotesInput"><b>Notes</b></label>
+            <textarea name="userNote" id="editedNotesInput" cols="30" rows="10" placeholder="Enter Notes" required></textarea>
+            <div class="form-button-container">
+                <button type="submit" class="btn" id="editedNoteSubmit">Save</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
     <div class="card-container" id="card-container">
-        <!-- ini nanti bakal ada isi dari database -->
+        <!-- ini untuk percobaan -->
+        <!-- <input type="text" value="awokawok">
+        <div class="card" id="note0">
+            <div class="card-title">ini judul coba cobaan</div>
+            <div class="card-note-section">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis minus excepturi commodi dicta doloribus quasi adipisci deserunt quod maiores similique.</div>
+            <div class="card-button">
+                <button onclick="editNote()">Edit</button>
+                <button onclick="deleteNote()">Delete</button>
+            </div>
+        </div> -->
+        <!-- dibawah ini nanti bakal diisi note atau catatan dari database -->
     </div>
     <script src="js/script.js"></script>
 </body>
