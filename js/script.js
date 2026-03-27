@@ -129,3 +129,31 @@ const editNote = (id) => {
         closeForm()
     });
 }
+
+// Delete Data atau Note
+const deleteData = async (id) => {
+    try {
+        const response = await fetch(`http://localhost:3000/notes/${id}`, {
+            method: 'DELETE',
+        });
+        const data = await response.json();
+        console.log(data);
+        return data.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+const deleteNote = async (id) => {
+    try {
+        const data = await deleteData(id);
+        console.log(data);
+        if (data) {
+            const deletedCard = document.getElementById(`note${id}`);
+            deletedCard.remove();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
