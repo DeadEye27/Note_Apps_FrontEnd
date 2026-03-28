@@ -9,9 +9,24 @@ function closeForm() {
 
 
 const buatCard = (data) => {
+    const createdDate = data.createdAt 
+        ? new Date(data.createdAt).toLocaleDateString('id-ID', {day : 'numeric', month : 'short', year : 'numeric', hour : '2-digit', minute : '2-digit'})
+        : 'Tanggal tidak Tersedia';
+        
+    const updatedDate = data.updatedAt
+        ? new Date(data.updatedAt).toLocaleDateString('id-ID', {day : 'numeric', month : 'short', year : 'numeric', hour : '2-digit', minute : '2-digit'})
+        : '-';
+    
     const markupCard = `
         <div class="card" id="note${data.id}">
             <div class="card-title" id="title${data.id}">${data.title}</div>
+            
+            <div class="card-date-info">
+                <strong>ID: #${data.id}</strong><br>
+                <small>Dibuat: ${createdDate}</small>
+                <small id="updatedAt${data.id}">Diupdate: ${updatedDate}</small>
+            </div>
+            
             <div class="card-note-section" id="userNote${data.id}">${data.userNote}</div>
             <div class="card-button">
                 <button onclick="editNote(${data.id})">Edit</button>
@@ -100,9 +115,14 @@ const editData = async (formData, id) => {
 };
 
 const updateCard = (id, updatedData) => {
-    document.getElementById(`title${id}`).textContent = updatedData.title;
+    document.getElementById(`title${id}`).textContent = `${updatedData.title}`;
     document.getElementById(`userNote${id}`).textContent = updatedData.userNote;
-}
+
+    if (updatedData.updatedAt) {
+        const newUpdatedData = new Date(updatedData.updatedAt).toLocaleDateString('id-ID', {day : 'numeric', month : 'short', year : 'numeric', hour : '2-digit', minute : '2-digit'});
+        document.getElementById(`updatedAt${id}`).textContent = `Diupdate: ${newUpdatedData}`;
+    };
+};
 
 const editNote = (id) => {
     document.getElementById('editFormContainer').style.display = "flex";
@@ -116,14 +136,19 @@ const editNote = (id) => {
     const editFormEl = document.querySelector('.editForm');
     editFormEl.addEventListener('submit', async (event) => {
         event.preventDefault();
+        
         const formData = new FormData(editFormEl);
         console.log(formData);
+        
         const data = Object.fromEntries(formData);
         console.log(data);
+
         const updatedData = await editData(data, id);
+        
         console.log(updatedData);
+        
         if (updatedData) {
-            updateCard(id, data);
+            updateCard(id, updatedData);
         }
         editFormEl.reset();
         closeForm()
@@ -156,4 +181,39 @@ const deleteNote = async (id) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+// Fitur Search Bar
+const searchBar = document.getElementById('search_bar');
+const noResultMessage = document.getElementById('no-result-message');
+searchBar.addEventListener('input', (event) => {
+    const keyword = event.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    let adaCatatanYangCocok = false;
+
+    cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const noteContent = card.querySelector('.card-note-section').textContent.toLowerCase();
+
+        if (title.includes(keyword) || noteContent.includes(keyword)) {
+            card.style.display = "flex";
+            adaCatatanYangCocok = true;
+        } else {
+            card.style.display = "none";
+        };
+    });
+
+    if (!adaCatatanYangCocok && cards.length > 0) {
+        noResultMessage.style.display = 'block';
+    } else {
+        noResultMessage.style.display = 'none';
+    };
+});
+
+const searchForm = searchBar.closest('form');
+if (searchForm) {
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+    });
 };
