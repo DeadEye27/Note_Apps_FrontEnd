@@ -9,7 +9,7 @@
 <body>
     <div class="header">
         <div class="header-logo">DEADEYE'S NOTE</div>
-        <ul class="header-buttons">
+        <ul class="header-buttons-container">
             <li>
                 <!-- <a href="//" target="_blank" rel="noopener noreferrer">Add Note</a> -->
                 <button class="add-note-button" onclick="openForm()">New Note</button>
@@ -31,8 +31,8 @@
             <label for="inputNotes"><b>Notes</b></label>
             <textarea name="userNote" id="inputNotes" cols="30" rows="10" placeholder="Enter Notes" required></textarea>
             <div class="form-button-container">
-                <button type="submit" class="btn" id="noteSubmit">Save</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                <button type="submit" class="btn-card btn-blue" id="noteSubmit">Save</button>
+                <button type="button" class="btn-card btn-red" onclick="closeForm()">Cancel</button>
             </div>
         </form>
     </div>
@@ -44,8 +44,8 @@
             <label for="editedNotesInput"><b>Notes</b></label>
             <textarea name="userNote" id="editedNotesInput" cols="30" rows="10" placeholder="Enter Notes" required></textarea>
             <div class="form-button-container">
-                <button type="submit" class="btn" id="editedNoteSubmit">Save</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                <button type="submit" class="btn-card btn-blue" id="editedNoteSubmit">Save</button>
+                <button type="button" class="btn-card btn-red" onclick="closeForm()">Cancel</button>
             </div>
         </form>
     </div>

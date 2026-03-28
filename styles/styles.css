@@ -23,7 +23,7 @@ body {
     font-weight: bold;
 }
 
-.header-buttons {
+.header-buttons-container {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -39,6 +39,8 @@ body {
     padding: 10px;
     background-color: aliceblue;
     border: solid 1px black;
+    border-radius: 8px;
+    gap: 5px;
 }
 
 .form-popup {
@@ -54,10 +56,28 @@ body {
 }
 
 .add-note-button {
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     padding: 5px 10px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+
+    background-color: #e0fee2;
+    /* color: #12911a; */
 }
+
+.add-note-button:hover {
+    background-color: #18ff28;
+    color: white;
+}
+
+.add-note-button:active {
+    transform: scale(0.95);
+}
+
 
 .form-button-container {
     display: flex;
@@ -110,6 +130,8 @@ a {
     overflow-y: auto;
     word-wrap: break-word;
 
+    white-space: pre-wrap;
+
 }
 
 .card-note-section::-webkit-scrollbar {
@@ -127,8 +149,43 @@ a {
 
 .card-button {
     text-align: right;
-    /* justify-self: flex-end; */
-    margin-top: auto;
+    margin-top: auto;    
+}
+
+.btn-card {
+    border: none;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+
+.btn-blue {
+    background-color: #E0F2FE;
+    color: #0284C7;
+}
+
+.btn-blue:hover {
+    background-color: #0284C7;
+    color: white;
+}
+
+.btn-red {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.btn-red:hover {
+    background-color: #DC2626;
+    color: white;
+}
+
+.btn-card:active {
+    transform: scale(0.95);
 }
 
 .card-date-info {
@@ -145,9 +202,7 @@ a {
     display: block;
     line-height: 1;
 }
-/* * { */
-    /* outline: solid red 1px; */
-/* } */
+
 
 .form-edit-container {
     display: none;
@@ -168,6 +223,8 @@ a {
     padding: 10px;
     background-color: palegreen;
     border: solid 1px black;
+    border-radius: 8px;
+    gap: 5px;
 }
 
 #no-result-message {

@@ -29,8 +29,8 @@ const buatCard = (data) => {
             
             <div class="card-note-section" id="userNote${data.id}">${data.userNote}</div>
             <div class="card-button">
-                <button onclick="editNote(${data.id})">Edit</button>
-                <button onclick="deleteNote(${data.id})">Delete</button>
+                <button class="btn-card btn-blue" onclick="editNote(${data.id})">Edit</button>
+                <button class="btn-card btn-red" onclick="deleteNote(${data.id})">Delete</button>
             </div>
         </div>    
     `;
@@ -152,7 +152,7 @@ const editNote = (id) => {
         }
         editFormEl.reset();
         closeForm()
-    });
+    }, {once: true});
 }
 
 // Delete Data atau Note
